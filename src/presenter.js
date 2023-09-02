@@ -1,15 +1,15 @@
-import sumar from "./sumador";
+import funciones from "./funciones.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+
+const form = document.querySelector("#tot-form");
+
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const comandosInput = document.querySelector("#comandos").value;
+  const resultado=document.querySelector("#resultado");
+  const htmlGenerado = funciones.mostrarDatosIngresados(comandosInput,resultado.innerHTML);
+  resultado.innerHTML=htmlGenerado;
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
 });

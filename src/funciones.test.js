@@ -5,5 +5,9 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.mostrarDatosIngresados("5,5/1,2N/IAIAIA")).toEqual("<p> Dimensiones: 5,5 <br> Comandos: IAIAIA <br> Posicion Inicial: 1,2N </p>");
     });
+    it("validar que posicion inicial este dentro de los limetes de las dimensiones", () => {
+       
+      expect(funciones.verificarPosicionInicial("5,5/1,2N/IAIAIA")).toEqual(true);
+    });
 
 });

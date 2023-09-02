@@ -9,5 +9,9 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.verificarPosicionInicial("5,5/1,2N/IAIAIA")).toEqual(true);
     });
+    it("rechazar  posicion inicial cuando este fuera de los limetes de las dimensiones", () => {
+       
+      expect(funciones.verificarPosicionInicial("5,5/1,7N/IAIAIA")).toEqual(false);
+    });
 
 });

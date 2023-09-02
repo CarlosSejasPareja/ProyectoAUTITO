@@ -7,11 +7,19 @@ describe(" Pruebas Funciones", () => {
     });
     it("validar que posicion inicial este dentro de los limetes de las dimensiones", () => {
        
-      expect(funciones.verificarPosicionInicial("5,5/1,2N/IAIAIA")).toEqual(true);
+      expect(funciones.esPosicionInicialValida("5,5/1,2N/IAIAIA")).toEqual(true);
     });
     it("rechazar  posicion inicial cuando este fuera de los limetes de las dimensiones", () => {
        
-      expect(funciones.verificarPosicionInicial("5,5/1,7N/IAIAIA")).toEqual(false);
+      expect(funciones.esPosicionInicialValida("5,5/1,7N/IAIAIA")).toEqual(false);
+    });
+    it("validar cuando dimension ingreasa sea correcta", () => {
+       
+      expect(funciones.esDimensionValida("5,5/1,5N/IAIAIA")).toEqual(true);
+    });
+    it("rechazar  cuando dimension sea incorrecta", () => {
+       
+      expect(funciones.esPosicionInicialValida("5,-5/1,5N/IAIAIA")).toEqual(false);
     });
 
 });
